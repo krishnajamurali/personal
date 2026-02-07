@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propose Day 💌</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d62828;
+      text-shadow: 2px 2px 8px #ff9a9e;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #5f0f40;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    .heart {
+      font-size: 50px;
+      color: #ff2e63;
+      animation: float 2s ease-in-out infinite;
+      position: absolute;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); opacity: 0.7; }
+      50% { transform: translateY(-20px); opacity: 1; }
+      100% { transform: translateY(0px); opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy Propose Day! 💌</h1>
+  <p>Every moment with you feels special… Will you be mine forever? 💖</p>
+
+  <script>
+    // Floating hearts animation
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.textContent = '❤️';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>

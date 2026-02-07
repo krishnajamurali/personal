@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chocolate Day 🍫</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #6b4226;
+      text-shadow: 2px 2px 8px #8b5e3c;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #4b2e2e;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    .choco {
+      font-size: 50px;
+      animation: float 2s ease-in-out infinite;
+      position: absolute;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); opacity: 0.7; }
+      50% { transform: translateY(-20px); opacity: 1; }
+      100% { transform: translateY(0px); opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy Chocolate Day! 🍫</h1>
+  <p>Here’s a sweet treat just for you… because you make life sweeter! 💖</p>
+
+  <script>
+    // Floating chocolate hearts
+    function createChoco() {
+      const choco = document.createElement('div');
+      choco.className = 'choco';
+      choco.textContent = '🍫';
+      choco.style.left = Math.random() * window.innerWidth + 'px';
+      choco.style.animationDuration = (2 + Math.random() * 3) + 's';
+      document.body.appendChild(choco);
+      setTimeout(() => choco.remove(), 5000);
+    }
+
+    setInterval(createChoco, 500);
+  </script>
+
+</body>
+</html>
